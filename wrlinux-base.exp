@@ -1,0 +1,20 @@
+#!/usr/bin/expect
+
+set timeout -1
+
+# clone the Wind River Linux git repository
+spawn git clone \
+  --branch $env(WRL_BRANCH) \
+  $env(WRL_REPO_URL)
+expect eof
+
+spawn git clone \
+  $env(WRL_SBOM_URL)
+expect eof
+
+# accept eula
+spawn ./wrlinux-x/setup.sh \
+  --accept-eula yes
+expect eof
+
+exit

@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+
+# run setup.sh to define your project configuration
+spawn ./wrlinux-x/setup.sh \
+  --base-branch $env(WRL_BRANCH) \
+  --buildtools-branch $env(WRL_BRANCH) \
+  --distros $env(WRL_DISTRO) \
+  --machines $env(WRL_MACHINE) \
+  --dl-layers
+expect eof
+
+exit
