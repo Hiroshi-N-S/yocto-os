@@ -13,6 +13,7 @@ RUN set -eux ;\
       mkdir -p /etc/apt/apt.conf.d ;\
       mv apt-proxy.conf /etc/apt/apt.conf.d/apt-proxy.conf ;\
       apt update && apt install -y \
+        sudo \
         expect \
         # Necessary Linux Host System Libraries and Executables
         gawk \
