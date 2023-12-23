@@ -13,10 +13,10 @@ cd /home/yocto
 
 touch conf/sanity.conf
 
-#
-# generating SBOM files
-#
-bitbake-layers add-layer ../meta-wr-sbom
+# #
+# # generating SBOM files
+# #
+# bitbake-layers add-layer ../meta-wr-sbom
 
 #
 # edit local.conf
