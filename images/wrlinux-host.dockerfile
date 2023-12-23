@@ -8,8 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN set -eux ;\
       # proxy config for apt
-      echo 'Acquire::http::Proxy "$http_proxy";' >>apt-proxy.conf ;\
-      echo 'Acquire::https::Proxy "$https_proxy";' >>apt-proxy.conf ;\
+      echo "Acquire::http::Proxy \"$http_proxy\";" >>apt-proxy.conf ;\
+      echo "Acquire::https::Proxy \"$https_proxy\";" >>apt-proxy.conf ;\
       mkdir -p /etc/apt/apt.conf.d ;\
       mv apt-proxy.conf /etc/apt/apt.conf.d/apt-proxy.conf ;\
       apt update && apt install -y \
