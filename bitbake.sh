@@ -16,7 +16,7 @@ touch conf/sanity.conf
 #
 # generating SBOM files
 #
-bitbake-layers add ../meta-wr-sbom
+bitbake-layers add-layer ../meta-wr-sbom
 
 #
 # edit local.conf
@@ -53,7 +53,7 @@ done
 # bitbake sdk
 #
 for i in $(seq ${BITBAKE_RETRY_COUNT}) ; do \
-  bitbake wrlinux-image-small -c populate_sdk && \
+  bitbake -c populate_sdk wrlinux-image-small && \
   break
   if [ $i -eq ${BITBAKE_RETRY_COUNT} ] ; then exit 1 ; fi
   sleep 1
